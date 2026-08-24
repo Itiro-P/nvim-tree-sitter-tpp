@@ -15,14 +15,10 @@ function M.setup(opts)
           url = "https://github.com/Itiro-P/tree-sitter-tpp",
           revision = "0.1.5",
           queries = "queries",
-          locals = "locals",
-          folds = "folds"
         },
       }
     end,
   })
-
-  require("nvim-treesitter").install({ "tpp" })
 end
 
 return M
