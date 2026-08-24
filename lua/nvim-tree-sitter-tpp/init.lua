@@ -23,9 +23,14 @@ function M.setup(opts)
 
   require("nvim-treesitter").install({ "tpp" })
 
-  --vim.api.nvim_create_autocmd("FileType", {
-    
-  --})
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = "tpp",
+    callback = function()
+      vim.treesitter.start()
+      vim.wo[0][0].folderxp = "v:lua.vim.treesitter.folderxpr()"
+      vim.wo[0][0].foldmethod = "expr"
+      vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+  })
 end
 
 return M
