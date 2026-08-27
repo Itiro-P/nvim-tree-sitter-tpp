@@ -13,7 +13,7 @@ function M.setup(opts)
       require("nvim-treesitter.parsers").tpp = {
         install_info = {
           url = "https://github.com/Itiro-P/tree-sitter-tpp",
-          revision = "0.1.7",
+          revision = "0.1.8",
           queries = "queries",
         },
       }
